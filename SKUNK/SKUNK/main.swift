@@ -8,75 +8,175 @@
 
 import Foundation
 
-var die1 = 6
-var die2 = 6
-var totalPoints = 0
+var die1 = 0
+var die2 = 0
+var totalDie = 0
 //
 //var rollsArray1 = [Int]()
 //rollsArray1.append(12)
 //rollsArray1.append(11)
 //rollsArray1.append(3)
+var rolls = [Int]()
+var roll1 = ""
+var roll2 = ""
+var roll3 = ""
+var roll4 = ""
+var roll5 = ""
+var roll6 = ""
+var roll7 = ""
+var roll8 = ""
+var roll9 = ""
+var roll10 = ""
 
-var roll1 = 0
-var roll2 = 0
-var roll3 = 0
-var roll4 = 0
-var roll5 = 0
-var roll6 = 0
-var roll7 = 0
-var roll8 = 0
-var roll9 = 0
-var roll10 = 0
+var roll11 = ""
+var roll12 = ""
+var roll13 = ""
+var roll14 = ""
+var roll15 = ""
+var roll16 = ""
+var roll17 = ""
+var roll18 = ""
+var roll19 = ""
+var roll20 = ""
 
-var roll11 = 0
-var roll12 = 0
-var roll13 = 0
-var roll14 = 0
-var roll15 = 0
-var roll16 = 0
-var roll17 = 0
-var roll18 = 0
-var roll19 = 0
-var roll20 = 0
+var roll21 = ""
+var roll22 = ""
+var roll23 = ""
+var roll24 = ""
+var roll25 = ""
+var roll26 = ""
+var roll27 = ""
+var roll28 = ""
+var roll29 = ""
+var roll30 = ""
 
-var roll21 = 0
-var roll22 = 0
-var roll23 = 0
-var roll24 = 0
-var roll25 = 0
-var roll26 = 0
-var roll27 = 0
-var roll28 = 0
-var roll29 = 0
-var roll30 = 0
+var roll31 = ""
+var roll32 = ""
+var roll33 = ""
+var roll34 = ""
+var roll35 = ""
+var roll36 = ""
+var roll37 = ""
+var roll38 = ""
+var roll39 = ""
+var roll40 = ""
 
-var roll31 = 0
-var roll32 = 0
-var roll33 = 0
-var roll34 = 0
-var roll35 = 0
-var roll36 = 0
-var roll37 = 0
-var roll38 = 0
-var roll39 = 0
-var roll40 = 0
+var roll41 = ""
+var roll42 = ""
+var roll43 = ""
+var roll44 = ""
+var roll45 = ""
+var roll46 = ""
+var roll47 = ""
+var roll48 = ""
+var roll49 = ""
+var roll50 = ""
 
-var roll41 = 0
-var roll42 = 0
-var roll43 = 0
-var roll44 = 0
-var roll45 = 0
-var roll46 = 0
-var roll47 = 0
-var roll48 = 0
-var roll49 = 0
-var roll50 = 0
+var gameLocation = 0
 
-print("Would you like to roll the dice?")
-let input = readLine(strippingNewline: true)
-if input == "yes" {
-die1 = Int(arc4random_uniform(6))+1
+// function: rolls the dice
+func rollDice() {
+    die1 = Int(arc4random_uniform(6))+1
     die2 = Int(arc4random_uniform(6))+1
     print("You rolled a \(die1) and a \(die2).")
-    print("S | \(roll1), \(roll2), \(roll3), \(roll4), \(roll5), \(roll6), \(roll7), \(roll8), \(roll9), \(roll10) \nK | \(roll11), \(roll12), \(roll13), \(roll14), \(roll15), \(roll16), \(roll17), \(roll18), \(roll19), \(roll20) \nU | \(roll21), \(roll22), \(roll23), \(roll24), \(roll25), \(roll26), \(roll27), \(roll28), \(roll29), \(roll30) \nN | \(roll31), \(roll32), \(roll33), \(roll34), \(roll35), \(roll36), \(roll37), \(roll38), \(roll39), \(roll40) \nK | \(roll41), \(roll42), \(roll43), \(roll44), \(roll45), \(roll46), \(roll47), \(roll48), \(roll49), \(roll50)")
+    
+    print (rolls)
+    if rolls.count > 0{
+        print("S | ", terminator: "")
+        for i in 0...rolls.count - 1 {
+            if i < 10 && rolls[i] != 0 {
+                print (rolls[i], terminator: " ")
+            }
+        }
+        
+        if rolls.count < 10 {
+            print (String(die1 + die2), terminator: "")
+        }
+        
+        print ()
+        print("K | ", terminator: "")
+        if rolls.count > 10 {
+            for i in 10...rolls.count - 1 {
+                if i < 20 && rolls[i] != 0 {
+                    print (rolls[i], terminator: " ")
+                }
+            }
+        }
+        
+        if rolls.count < 20 && rolls.count > 9 {
+            print (String(die1 + die2), terminator: "")
+        }
+        
+        print ()
+        print("U | ", terminator: "")
+        if rolls.count > 20 {
+            for i in 20...rolls.count - 1 {
+                if i < 30 && rolls[i] != 0 {
+                    print (rolls[i], terminator: " ")
+                }
+            }
+        }
+        
+        if rolls.count < 30 && rolls.count > 19 {
+            print (String(die1 + die2), terminator: "")
+        }
+        
+        print ()
+        print("N | ", terminator: "")
+        if rolls.count > 30 {
+            for i in 30...rolls.count - 1 {
+                if i < 40 && rolls[i] != 0 {
+                    print (rolls[i], terminator: " ")
+                }
+            }
+        }
+        
+        if rolls.count < 40 && rolls.count > 29 {
+            print (String(die1 + die2), terminator: "")
+        }
+        
+        print ()
+        print("K | ", terminator: "")
+        if rolls.count > 40 {
+            for i in 40...rolls.count - 1 {
+                if i < 50 && rolls[i] != 0 {
+                    print (rolls[i], terminator: " ")
+                }
+            }
+        }
+        
+        if rolls.count < 50 && rolls.count > 39 {
+            print (String(die1 + die2), terminator: "")
+        }
+        
+        print ()
+    }
+}
+while gameLocation == 0 {
+    
+    // opening statement
+    print("Would you like to roll the dice?")
+    let input = readLine(strippingNewline: true)
+    
+    // if yes...
+    if input == "yes" {
+        
+        rolls.append(die1+die2)
+        
+        rollDice()
+        
+        if die1 == 1 || die2 == 1 {
+            while rolls.count%10 != 0 {
+                rolls.append(0)
+            }
+        }
+        //if no...
+    } else if input == "no" {
+        print ("Game Over!")
+        break
+        
+        // if neither...
+    } else {
+        print ("Error: you must use either 'yes' or 'no' as a response!\n")
+    }
 }
